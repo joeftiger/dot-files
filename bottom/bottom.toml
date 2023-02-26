@@ -1,0 +1,32 @@
+# https://github.com/ClementTsang/bottom
+
+[flags]
+rate = 1000
+hide_table_gap = true
+tree = true
+show_table_scroll_position = true
+process_command = true
+network_use_binary_prefix = true
+battery = true
+
+[[row]]
+ratio=3
+[[row.child]]
+ratio=40
+type="cpu"
+[[row.child]]
+ratio=27
+type="temp"
+[[row]]
+ratio=3
+[[row.child]]
+type="mem"
+[[row.child]]
+type="disk"
+[[row]]
+ratio=4
+[[row.child]]
+type="net"
+[[row.child]]
+type="proc"
+default=true
