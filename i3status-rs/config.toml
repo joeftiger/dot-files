@@ -1,0 +1,77 @@
+# https://github.com/greshake/i3status-rust
+
+[theme]
+theme = "nord-dark"
+[icons]
+icons = "awesome6"
+
+[[block]]
+block = "net"
+interval = 1
+[[block.click]]
+button = "left"
+cmd = "alacritty --class HUD -t 'NetworkManager TUI' -e nmtui"
+[[block.click]]
+button = "right"
+cmd = "nm-connection-editor"
+
+[[block]]
+block = "pacman"
+interval = 300
+critical_updates_regex = "(linux|linux-firmware|amd-ucode)"
+aur_command = "paru -Qu"
+signal = 1
+[[block.click]]
+button = "left"
+cmd = "paru -Qu | wofi --show dmenu"
+
+[[block]]
+block = "memory"
+format = " $icon $mem_total_used_percents "
+[[block.click]]
+button = "left"
+cmd = "alacritty --class HUD -t 'System Monitor' -e btm --default_widget_type memory"
+
+[[block]]
+block = "cpu"
+interval = 1
+format = " $icon $barchart $utilization $frequency "
+[[block.click]]
+button = "left"
+cmd = "alacritty --class HUD -t 'System Monitor' -e btm --default_widget_type cpu"
+
+[[block]]
+block = "load"
+interval = 1
+[[block.click]]
+button = "left"
+cmd = "alacritty --class HUD -t 'System Monitor' -e btm --default_widget_type cpu"
+
+[[block]]
+block = "temperature"
+interval = 1
+chip = "k10temp-pci-00c3"
+[[block.click]]
+button = "left"
+cmd = "alacritty --class HUD -t 'System Monitor' -e btm --default_widget_type temperature"
+
+[[block]]
+block = "hueshift"
+
+[[block]]
+block = "sound"
+step_width = 2
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+[[block]]
+block = "time"
+interval = 1
+
+[[block]]
+block = "weather"
+autolocate = true
+autolocate_interval = "once"
+[block.service]
+name = "metno"
