@@ -1,0 +1,18 @@
+# https://github.com/Morganamilo/paru
+
+font:
+  size: 12
+  normal:
+    family: JetBrains Mono
+  bold:
+    family: JetBrains Mono
+    style: Bold
+  italic:
+    family: JetBrains Mono
+    style: Italic
+  normal:
+    family: JetBrains Mono
+    style: Bold
+  bold_italic:
+    family: JetBrains Mono
+    style: Bold Italic
